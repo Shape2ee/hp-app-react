@@ -48,22 +48,6 @@ const StyledTextBox = styled("div")`
   }
 `
 
-const StyledButton = styled("button")`
-  height: 40px;
-  margin: 30px;
-  padding: 0 20px;
-  background-color: #fff;
-  border-radius: 20px;
-  font-family: "Pretendard";
-  font-size: 16px;
-  text-align: center;
-  line-height: 40px;
-
-  :hover {
-    opacity: 0.8;
-  }
-`
-
 const BigBanner = () => {
 
   SwiperCore.use(Pagination);
