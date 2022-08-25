@@ -79,8 +79,8 @@ const BigBanner = () => {
     {
       id: 2,
       title: "HyperX",
-      subTitle1: "서라운드 사운드와",
-      subTitle2: "저음 조절 기능으로 진화",
+      subTitle1: "실력만이",
+      subTitle2: "너를 증명한다",
       bg: "https://via.placeholder.com/400x600/555/ddd?text=img2"
     },
     {
