@@ -1,19 +1,22 @@
-import React from 'react';
-import styled from 'styled-components';
-import Button from './Button';
+import React from "react";
+import styled from "styled-components";
+import Button from "./Button";
 // swiper
-import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Pagination } from "swiper";
-import 'swiper/css';
-import 'swiper/css/pagination';
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Autoplay, EffectFade, Pagination } from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
 
 const StyledSwiper = styled(Swiper)`
   width: 100%;
   height: 640px;
-  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif;
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
 
   .slideItem {
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
     background: no-repeat 50% / cover;
@@ -24,10 +27,10 @@ const StyledSwiper = styled(Swiper)`
     --swiper-pagination-bullet-inactive-color: #fff;
     --swiper-theme-color: #fff;
   }
-`
+`;
 
 const StyledTextBox = styled("div")`
-  margin-top: 80px;
+  margin-top: 100px;
   text-align: center;
   color: #fff;
 
@@ -46,10 +49,9 @@ const StyledTextBox = styled("div")`
   .block {
     display: block;
   }
-`
+`;
 
 const BigBanner = () => {
-
   SwiperCore.use(Pagination);
 
   const slideData = [
@@ -58,39 +60,50 @@ const BigBanner = () => {
       title: "HyperX",
       subTitle1: "서라운드 사운드와",
       subTitle2: "저음 조절 기능으로 진화",
-      bg: "https://via.placeholder.com/400x600/555/ddd?text=img1"
+      bg: "https://via.placeholder.com/400x600/555/ddd?text=img1",
     },
     {
       id: 2,
       title: "HyperX",
       subTitle1: "실력만이",
       subTitle2: "너를 증명한다",
-      bg: "https://via.placeholder.com/400x600/555/ddd?text=img2"
+      bg: "https://via.placeholder.com/400x600/555/ddd?text=img2",
     },
     {
       id: 3,
       title: "HyperX",
       subTitle1: "서라운드 사운드와",
       subTitle2: "저음 조절 기능으로 진화",
-      bg: "https://via.placeholder.com/400x600/555/ddd?text=img3"
+      bg: "https://via.placeholder.com/400x600/555/ddd?text=img3",
     },
-  ]
+  ];
 
   return (
     <StyledSwiper
-      spaceBetween={20}
+      effect={"fade"}
+      loop={true}
       pagination={{ clickable: true }}
+      modules={[Autoplay, EffectFade, Pagination]}
+      autoplay={{
+        delay: 3000,
+        disableOnInteraction: false,
+      }}
     >
-      { slideData.map((item) => (
-
-        <SwiperSlide className='slideItem' key={item.id} style={{backgroundImage:`url(${item.bg})`}}>
+      {slideData.map((item) => (
+        <SwiperSlide
+          className="slideItem"
+          key={item.id}
+          style={{ backgroundImage: `url(${item.bg})` }}
+        >
           <StyledTextBox>
             <h2>{item.title}</h2>
-            <p>{item.subTitle1}<span className='block'>{item.subTitle2}</span></p>
+            <p>
+              {item.subTitle1}
+              <span className="block">{item.subTitle2}</span>
+            </p>
           </StyledTextBox>
           <Button title={"더 알아보기"} bg={"white"} />
         </SwiperSlide>
-
       ))}
     </StyledSwiper>
   );

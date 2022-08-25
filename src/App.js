@@ -8,7 +8,8 @@ import TodayEvent from "./component/TodayEvent";
 import Sustainable from "./component/Sustainable";
 import Delivers from "./component/delivers/Delivers";
 import Product from "./component/product/Product";
-import News from "./component/news/News";
+import Employment from "./component/Employment";
+import Search from "./component/search/Search";
 
 function App() {
   return (
@@ -21,8 +22,8 @@ function App() {
         <Sustainable />
         <Delivers />
         <Product />
-        <News />
-
+        <Employment />
+        <Search />
       </main>
     </div>
   );

@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const StyledImgBox = styled("div")`
   overflow: hidden;
+  height: 100%;
   border-radius: 20px;
-  /* height: 200px; */
 
   img {
     width: 100%;
@@ -14,7 +14,7 @@ const StyledImgBox = styled("div")`
   }
 `;
 
-const ImgBox = ({src, alt}) => {
+const ImgBox = ({ src, alt }) => {
   return (
     <StyledImgBox>
       <img src={src} alt={alt} />
