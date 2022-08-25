@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/hp-app-react/static/css/main.508008a4.css",
+    "main.js": "/hp-app-react/static/js/main.1e670f5e.js",
+    "static/js/787.861dce37.chunk.js": "/hp-app-react/static/js/787.861dce37.chunk.js",
+    "static/media/PretendardVariable.woff2": "/hp-app-react/static/media/PretendardVariable.665f232b25bf70832e04.woff2",
+    "static/media/PretendardVariable.woff": "/hp-app-react/static/media/PretendardVariable.b2eddc9681ee9555ef06.woff",
+    "index.html": "/hp-app-react/index.html",
+    "static/media/HP_log_white.svg": "/hp-app-react/static/media/HP_log_white.b728341e4266d48f537770cbabf818ca.svg",
+    "static/media/search.svg": "/hp-app-react/static/media/search.08ab705c2b59adbdf4d7b656dca65edd.svg",
+    "static/media/category.svg": "/hp-app-react/static/media/category.9c8505610d377d65ebb61cfb889c1573.svg",
+    "main.508008a4.css.map": "/hp-app-react/static/css/main.508008a4.css.map",
+    "main.1e670f5e.js.map": "/hp-app-react/static/js/main.1e670f5e.js.map",
+    "787.861dce37.chunk.js.map": "/hp-app-react/static/js/787.861dce37.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.508008a4.css",
+    "static/js/main.1e670f5e.js"
+  ]
+}
