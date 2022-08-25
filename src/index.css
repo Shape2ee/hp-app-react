@@ -1,6 +1,18 @@
+@charset "utf-8";
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 45 920;
+	font-style: normal;
+	font-display: swap;
+	src: local('Pretendard Variable'), url('./assets/font/PretendardVariable.woff2') format('woff2-variations'),
+  url('./assets/font/PretendardVariable.woff') format('woff-variations'),;
+}
+
 body {
+  width: 390px;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -10,4 +22,16 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+button {
+  padding: 0;
+  margin: 0;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
