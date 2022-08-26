@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/hp-app-react/static/css/main.a5d86d5e.css",
-    "main.js": "/hp-app-react/static/js/main.cd94e4b0.js",
+    "main.js": "/hp-app-react/static/js/main.e8d703ea.js",
     "static/js/787.861dce37.chunk.js": "/hp-app-react/static/js/787.861dce37.chunk.js",
     "static/media/PretendardVariable.woff2": "/hp-app-react/static/media/PretendardVariable.665f232b25bf70832e04.woff2",
     "static/media/PretendardVariable.woff": "/hp-app-react/static/media/PretendardVariable.b2eddc9681ee9555ef06.woff",
@@ -37,13 +37,14 @@
     "static/media/search.svg": "/hp-app-react/static/media/search.08ab705c2b59adbdf4d7b656dca65edd.svg",
     "static/media/search_bk.svg": "/hp-app-react/static/media/search_bk.e6e23d5dfbfa9e871961f9011b2ebdda.svg",
     "static/media/category.svg": "/hp-app-react/static/media/category.9c8505610d377d65ebb61cfb889c1573.svg",
+    "static/media/back.svg": "/hp-app-react/static/media/back.c0e5fa54f72e9d4bf640703c437f9f1f.svg",
     "static/media/down_arrow.svg": "/hp-app-react/static/media/down_arrow.2000b09a08240cab760f6a79f5dcba40.svg",
     "main.a5d86d5e.css.map": "/hp-app-react/static/css/main.a5d86d5e.css.map",
-    "main.cd94e4b0.js.map": "/hp-app-react/static/js/main.cd94e4b0.js.map",
+    "main.e8d703ea.js.map": "/hp-app-react/static/js/main.e8d703ea.js.map",
     "787.861dce37.chunk.js.map": "/hp-app-react/static/js/787.861dce37.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a5d86d5e.css",
-    "static/js/main.cd94e4b0.js"
+    "static/js/main.e8d703ea.js"
   ]
 }
