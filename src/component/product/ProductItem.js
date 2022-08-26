@@ -15,7 +15,6 @@ const StyledH3 = styled("h3")`
   position: absolute;
   top: 20px;
   left: 20px;
-  color: #fff;
 `;
 
 const ProductItem = ({ src, title }) => {

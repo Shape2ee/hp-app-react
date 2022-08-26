@@ -2,8 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import Button from "./Button";
 
+import banner from "../assets/images/middleBanner.png";
+
 const StyledSection = styled("section")`
   position: relative;
+  padding: 80px 0;
   
   img {
     width: 100%;
@@ -47,7 +50,7 @@ const Employment = () => {
         <Button title={"더 알아보기"} bg={"white"} />
       </StyledTextBox>
       <img
-        src="https://via.placeholder.com/390x250/555/767676?text=banner"
+        src={banner}
         alt="채용"
       />
     </StyledSection>

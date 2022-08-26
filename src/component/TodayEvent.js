@@ -11,6 +11,13 @@ import SwiperCore, { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 
+// images
+import img1 from "../assets/images/today1.jpg"
+import img2 from "../assets/images/today2.jpg"
+import img3 from "../assets/images/today3.jpg"
+import img4 from "../assets/images/today4.jpg"
+import img5 from "../assets/images/today5.jpg"
+
 const StyledSection = styled("section")`
   overflow: hidden;
   padding: 80px 24px;
@@ -46,11 +53,63 @@ const StyledFigure = styled("figure")`
     margin: 20px 0 40px;
     width: 100%;
     text-align: center;
+    font-size: 24px;
+    line-height: 30px;
+    .block {
+      display: block;
+    }
   }
 `;
 
 const TodayEvent = () => {
   SwiperCore.use(Pagination);
+  const slideData = [
+    {
+      title: (
+        <figcaption>
+          <p>하이퍼엑스 게이밍<span className="block">패키지 특가</span></p>
+        </figcaption>
+      ),
+      link:"#",
+      imgUrl: img1,
+    },
+    {
+      title: (
+        <figcaption>
+          <p>게이밍<span className="block">노트북 추천</span></p>
+        </figcaption>
+      ),
+      link:"#",
+      imgUrl: img2,
+    },
+    {
+      title: (
+        <figcaption>
+          <p>레이저젯 프린터<span className="block">구매 혜택</span></p>
+        </figcaption>
+      ),
+      link:"#",
+      imgUrl: img3,
+    },
+    {
+      title: (
+        <figcaption>
+          <p>대화면 노트북으로<span className="block">생산성 증대</span></p>
+        </figcaption>
+      ),
+      link:"#",
+      imgUrl: img4,
+    },
+    {
+      title: (
+        <figcaption>
+          <p>프리미엄 노트북 및<span className="block">Z북 워크스테이션</span></p>
+        </figcaption>
+      ),
+      link:"#",
+      imgUrl: img5,
+    }
+  ]
 
   return (
     <StyledSection>
@@ -68,30 +127,16 @@ const TodayEvent = () => {
         pagination={{ clickable: true }}
         loop={true}
       >
-        <SwiperSlide>
-          <a href="#">
-            <StyledFigure>
-              <ImgBox src={"https://via.placeholder.com/400x300/ddd/fff?text=img1"} alt={"img1"} />
-              <figcaption>Hello World</figcaption>
-            </StyledFigure>
-          </a>
-        </SwiperSlide>
-        <SwiperSlide>
-          <a href="#">
-            <StyledFigure>
-              <ImgBox src={"https://via.placeholder.com/400x300/ddd/fff?text=img2"} alt={"img1"} />
-              <figcaption>Hello World</figcaption>
-            </StyledFigure>
-          </a>
-        </SwiperSlide>
-        <SwiperSlide>
-          <a href="#">
-            <StyledFigure>
-              <ImgBox src={"https://via.placeholder.com/400x300/ddd/fff?text=img3"} alt={"img1"} />
-              <figcaption>Hello World</figcaption>
-            </StyledFigure>
-          </a>
-        </SwiperSlide>
+        {slideData.map( (item, idx) => (
+          <SwiperSlide key={idx}>
+            <a href={item.link}>
+              <StyledFigure>
+                <ImgBox src={item.imgUrl} alt={item.title} />
+                {item.title}
+              </StyledFigure>
+            </a>
+          </SwiperSlide>
+        ))}
 
       </StyledSwiper>
     </StyledSection>

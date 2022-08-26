@@ -72,7 +72,6 @@ const FooterTab = () => {
       {menuList.map( (item, idx) => (
         <li key={idx}>{item.title}
         </li>
-        
       ))}
     </StyledMenu>
   );

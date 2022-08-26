@@ -55,22 +55,22 @@ const StyledReset = styled("button")`
   border-radius: 20px;
   color: #fff;
 
+  :hover {
+    opacity: 0.8;
+  }
+
 `
 
 const SearchForm = () => {
   const [ value, setValue ] = useState("")
   
   function handleInputChange(e) {
-    setValue(e.target.value);
-    console.log(e.target.value);
-    
+    setValue(e.target.value);    
   }
   
   function handleFormSubmit(e) {
     e.preventDefault();
-    console.log();
     createImgList(value)
-
     setValue("")
   }
 
@@ -78,6 +78,10 @@ const SearchForm = () => {
   const [imgData, setImgData] = useState([]);
 
   function createImgList(value) {
+    if(value === "") {
+      return
+    }
+
     console.log(value)
     const API_KEY = "17498131-60c8163ebf480582b8b8ecb47";
     const request = encodeURIComponent(value.trim())

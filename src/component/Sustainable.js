@@ -9,6 +9,12 @@ import SwiperCore, { Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 
+// images
+import climate from "../assets/images/climate.png"
+import human from "../assets/images/human.png"
+import digital from "../assets/images/digital.png"
+
+
 const StyledSection = styled("section")`
 overflow: hidden;
   margin: 80px 0;
@@ -50,6 +56,27 @@ const StyledTextBox = styled("div")`
 const Sustainable = () => {
   SwiperCore.use(Pagination);
 
+  const slideData = [
+    {
+      title:"기후 행동",
+      link: "#",
+      imgUrl: climate,
+      text: "책임 있는 산림 관리부터 재생 가능 에너지 및 자재 재사용에 이르기까지, 온실 가스(GHG) 배출량 제로라는 중요한 목표를 달성하는 방법은 다음과 같습니다.",
+    },
+    {
+      title:"인권",
+      link: "#",
+      imgUrl: human,
+      text: "IT 공급망 강화는 공급  업체 인력의 필수 작업자 및 관리 기술을 개선하는 것으로 시작됩니다. 우리가 그들을 위한 역량 강화 프로그램을 개발하는 방법을 알아보십시오.",
+    },
+    {
+      title:"디지털 자산",
+      link: "#",
+      imgUrl: digital,
+      text: "내일의 변화의 주체는 오늘 레벨업을 하고 있습니다. HP LIFE 및 더 많은 교육 이니셔티브를 통해 이러한 기회를 창출하도록 돕고 있습니다.",
+    },
+  ]
+
   return (
     <StyledSection>
       <Title title={"지속 가능한 영향력"}/>
@@ -57,30 +84,18 @@ const Sustainable = () => {
         spaceBetween={24}
         pagination={{ clickable: true }}
       >
-        <SwiperSlide>
-          <a href="#">
-            <StyledItem>
-              <ImgBox src={"https://via.placeholder.com/400x300/ddd/fff?text=img1"} alt={"img1"} />
-              <StyledTextBox>
-                <h3>기후 행동</h3>
-                <p>책임 있는 산림 관리부터 재생 가능 에너지 및 자재 재사용에 이르기까지, 온실 가스(GHG) 배출량 제로라는 중요한 목표를 달성하는 방법은 다음과 같습니다.</p>
-              </StyledTextBox>
-              <Button title={"더 알아보기"} bg={"black"} text={"white"}/>
-            </StyledItem>
-          </a>
-        </SwiperSlide>
-        <SwiperSlide>
-          <a href="#">
-            <div>
-              <ImgBox src={"https://via.placeholder.com/400x300/ddd/fff?text=img1"} alt={"img1"} />
-              <StyledTextBox>
-                <h3>기후 행동</h3>
-                <p>책임 있는 산림 관리부터 재생 가능 에너지 및 자재 재사용에 이르기까지, 온실 가스(GHG) 배출량 제로라는 중요한 목표를 달성하는 방법은 다음과 같습니다.</p>
-              </StyledTextBox>
-              <Button title={"더 알아보기"} bg={"black"} text={"white"}/>
-            </div>
-          </a>
-        </SwiperSlide>
+        {slideData.map( (item, idx) => (
+          <SwiperSlide key={idx}>
+              <StyledItem>
+                <ImgBox src={item.imgUrl} alt={"img1"} />
+                <StyledTextBox>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </StyledTextBox>
+                <Button title={"더 알아보기"} bg={"black"} text={"white"}/>
+              </StyledItem>
+          </SwiperSlide>
+        ))}
       </StyledSwiper>
     </StyledSection>
   );

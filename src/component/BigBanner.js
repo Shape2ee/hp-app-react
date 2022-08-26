@@ -8,6 +8,11 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
+// images
+import banner1 from "../assets/images/banner1.png"
+import banner2 from "../assets/images/banner2.png"
+import banner3 from "../assets/images/banner3.png"
+
 const StyledSwiper = styled(Swiper)`
   width: 100%;
   height: 640px;
@@ -60,21 +65,21 @@ const BigBanner = () => {
       title: "HyperX",
       subTitle1: "서라운드 사운드와",
       subTitle2: "저음 조절 기능으로 진화",
-      bg: "https://via.placeholder.com/400x600/555/ddd?text=img1",
+      bg: banner1,
     },
     {
       id: 2,
       title: "HyperX",
       subTitle1: "실력만이",
       subTitle2: "너를 증명한다",
-      bg: "https://via.placeholder.com/400x600/555/ddd?text=img2",
+      bg: banner2,
     },
     {
       id: 3,
       title: "HyperX",
       subTitle1: "서라운드 사운드와",
       subTitle2: "저음 조절 기능으로 진화",
-      bg: "https://via.placeholder.com/400x600/555/ddd?text=img3",
+      bg: banner3,
     },
   ];
 

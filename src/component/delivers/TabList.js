@@ -2,6 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 import TabItem from './TabItem';
 
+// images
+import tabImg1 from "../../assets/images/tab_img1.png"
+import tabImg2 from "../../assets/images/tab_img2.png"
+import tabImg3 from "../../assets/images/tab_img3.png"
+import tabImg4 from "../../assets/images/tab_img4.png"
+
 const StyledTabList = styled("ul")`
   display: flex;
   /* flex-direction: column; */
@@ -53,7 +59,7 @@ const TabList = () => {
       ),
       tabContent: (
         <TabItem
-          src={"https://via.placeholder.com/400x800/eee/ddd?text=img1"}
+          src={tabImg1}
           alt={"img1"}
           title={"100% 오리지널 정품"}
           subTitle={"HP 공식 온라인 스토어는 100% 정품만을 판매하므로 안심하고 쇼핑할 수 있습니다."}
@@ -66,7 +72,7 @@ const TabList = () => {
       ),
       tabContent: (
         <TabItem
-          src={"https://via.placeholder.com/400x800/eee/ddd?text=img2"}
+          src={tabImg2}
           alt={"img2"}
           title={"무료배송, 당일배송"}
           subTitle={"결제 후 2일 이내 배송되며, 배송비는 무료입니다."}
@@ -79,7 +85,7 @@ const TabList = () => {
       ),
       tabContent: (
         <TabItem
-          src={"https://via.placeholder.com/400x800/eee/ddd?text=img3"}
+          src={tabImg3}
           alt={"img3"}
           title={"회원혜택"}
           subTitle={"회원가입하시면 기본 3%, 최대 25만원 할인 받을 수 있는 쿠폰을 드립니다."}
@@ -92,7 +98,7 @@ const TabList = () => {
       ),
       tabContent: (
         <TabItem
-          src={"https://via.placeholder.com/400x800/eee/ddd?text=img1"}
+          src={tabImg4}
           alt={"img1"}
           title={"독점 프로모션"}
           subTitle={"다양한 PC, 프린터 등을 쇼핑하십시오. 공식 온라인 스토어에서만 구매 가능합니다."}
