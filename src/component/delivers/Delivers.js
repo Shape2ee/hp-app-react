@@ -11,7 +11,7 @@ const StyledSection = styled("section")`
 const StyledBox = styled("div")`
   transform: translateY(50px);
   opacity: 0;
-  transition: 0.5s;
+  transition: 1s;
 `
 
 const Delivers = () => {
@@ -20,7 +20,14 @@ const Delivers = () => {
   const element = useRef();
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScrollUp)
+    function fadeUpCheck() {
+      window.addEventListener("scroll", handleScrollUp)
+    }
+    fadeUpCheck()
+
+    return () => {
+      window.removeEventListener("scroll", handleScrollUp)
+    }
   })
 
   function handleScrollUp() {

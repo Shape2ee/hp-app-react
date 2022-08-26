@@ -21,12 +21,6 @@ const StyledH3 = styled("h3")`
 const ProductItem = ({ src, title }) => {
   const [createClass, setCreateClass] = useState({});
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleItemScroll);
-  });
-
-  const element = useRef();
-
   function handleItemScroll() {
     const clientHeight = element.current.clientHeight + 500;
 
@@ -39,6 +33,21 @@ const ProductItem = ({ src, title }) => {
       setCreateClass({});
     }
   }
+
+  useEffect(() => {
+    function fadeUpCheck() {
+      window.addEventListener("scroll", handleItemScroll);
+    }
+    fadeUpCheck();
+
+    return () => {
+      window.removeEventListener("scroll", handleItemScroll);
+    }
+  });
+
+  const element = useRef();
+
+  
 
   return (
     <StyledItem ref={element} style={{ ...createClass }}>

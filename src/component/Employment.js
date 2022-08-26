@@ -4,6 +4,13 @@ import Button from "./Button";
 
 const StyledSection = styled("section")`
   position: relative;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: top;
+  }
 `;
 
 const StyledTextBox = styled("div")`
@@ -26,12 +33,6 @@ const StyledTextBox = styled("div")`
     .block {
       display: block;
     }
-  }
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
 `;
 
