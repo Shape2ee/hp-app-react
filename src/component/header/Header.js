@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 // import SideNav from './SideNav';
-
+import SearchBox from "./SearchBox";
 // images
-import logo from "../assets/HP_log_white.svg";
-import search from "../assets/search.svg";
-import category from "../assets/category.svg";
+import logo from "../../assets/HP_log_white.svg";
+import search from "../../assets/search.svg";
+import category from "../../assets/category.svg";
+
 
 const StyledHeader = styled("header")`
   display: flex;
@@ -43,8 +44,23 @@ const StyledButton = styled("button")`
 `;
 
 const Header = () => {
+  const [searchBox, setSearchBox] = useState(null)
+
   function handleMenuClick(e) {
     e.preventDefault();
+  }
+
+  function handleSearchClick(e) {
+    e.preventDefault()
+    console.log(e)
+    setSearchBox(
+      <SearchBox handleCloseClick={handleCloseClick} />
+    )
+  }
+
+  function handleCloseClick(e) {
+    e.preventDefault()
+    setSearchBox(null)
   }
 
   return (
@@ -56,13 +72,14 @@ const Header = () => {
         </a>
       </StyledH1>
       {/* 검색 */}
-      <StyledButton>
+      <StyledButton onClick={handleSearchClick}>
         <img src={search} alt="검색" />
       </StyledButton>
       {/* 메뉴 */}
       <StyledButton style={{ marginLeft: 30 }} onClick={handleMenuClick}>
         <img src={category} alt="메뉴" />
       </StyledButton>
+      {searchBox}
     </StyledHeader>
   );
 };
