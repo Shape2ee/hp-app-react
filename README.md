@@ -1,70 +1,19 @@
-# Getting Started with Create React App
+# React Project 🖥
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### HP 사이트 리디자인
+리액트를 이용하여 컴퓨터 판매회사인 HP 사이트를 새롭게 리디자인 하였습니다.<br>
+전체적으로 깔끔하면서 라운드를 이용하여 부드러운 느낌을 추가하여 대중들에게<br>
+딱딱한 분위기보다 좀 더 친근하게 다가가는 느낌을 주고자 하였습니다.
 
-## Available Scripts
+[HP 사이트 바로가기](https://shape2ee.github.io/hp-app-react/)
+<br>
+<br>
 
-In the project directory, you can run:
+## 작업을 하면서 느낀점 📝
+- 이번 작업은 리액트를 이용해서 처음하는 작업이며, 학원에서 리액트를 아주 짧게 배워서 다시 처음부터 하나하나<br> 
+  스스로 찾아보면서 하다보니 작업 시간도 좀 오래 걸렸고, 반응형은 구현을 하지 못하고 모바일버전만 작업을 하게 되었습니다.<br>
+  계속 공부해서 반응형으로 Update할 예정입니다.
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- React만의 기능을 최대한 이용하면서 작업을 하고 싶어 Styled-Component로 작업을 하였는데,<br>
+  계속 class를 이용해서 css파일로 분리해서 작업을 할때는 active,on,show 등등 클래스를 하나 더 붙여서 움직임을<br>
+  쉽게 표현했는데 그 점이 Styled-Component에서는 헷갈렸지만, useState() 훅을 이용해서 해결하는 방식을 배웠습니다.
