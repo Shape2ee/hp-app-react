@@ -9,6 +9,10 @@ const StyledItem = styled("li")`
   height: 250px;
   transform: translateY(50%);
   transition: 1s;
+
+  @media ${props => props.theme.desktop} {
+    margin: 0 10px 20px;
+  }
 `;
 
 const StyledH3 = styled("h3")`

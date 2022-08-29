@@ -6,7 +6,11 @@ const StyledTitle = styled("h2")`
   font-size: 24px;
   font-weight: 700;
   text-align: center;
-  color: ${(props) => props.color ? props.color : "black"};
+  color: ${props => props.color ? props.color : "black"};
+
+  @media ${props => props.theme.desktop} {
+    font-size: 40px;
+  }
 `;
 
 const Title = ({title, color}) => {

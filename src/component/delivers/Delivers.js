@@ -12,6 +12,12 @@ const StyledBox = styled("div")`
   transform: translateY(50px);
   opacity: 0;
   transition: 1s;
+
+  @media ${props => props.theme.desktop} {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
 `
 
 const Delivers = () => {

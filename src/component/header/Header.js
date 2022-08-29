@@ -9,19 +9,28 @@ import search from "../../assets/search.svg";
 import category from "../../assets/category.svg";
 import closeBtn from "../../assets/close.svg"
 
-const StyledHeader = styled("header")`
+const StyledWrap = styled("div")`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  padding: 0 24px;
+  width: 100%;
+  height: 60px;
+
+  @media ${props => props.theme.desktop} {
+    margin: 0 auto;
+    padding: 0;
+    width: 90%;  
+    max-width: 1400px;
+  }
+`
+
+const StyledHeader = styled("header")`
   position: fixed;
   top: 0;
-  left: 50%;
+  left: 0;
   width: 100%;
-  max-width: 414px;
-  padding: 0 24px;
-  height: 60px;
   background-color: #111;
-  transform: translateX(-50%);
   box-sizing: border-box;
   z-index: 9999;
 `;
@@ -43,6 +52,41 @@ const StyledButton = styled("button")`
     object-fit: contain;
   }
 `;
+
+const StyledMenu = styled("button")`
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  @media ${props => props.theme.desktop} {
+    display: none;
+  }
+`;
+
+const StyledNav = styled("ul")`
+  display: none;
+  margin-right: 20px;
+  color: #fff;
+
+  li {
+    margin: 0 15px;
+    cursor: pointer;
+
+    :hover {
+      text-decoration: underline;
+    }
+  }
+
+  @media ${props => props.theme.desktop} {
+    display: flex;
+  }
+`
 
 const Header = () => {
   const [searchBox, setSearchBox] = useState(null);
@@ -75,22 +119,33 @@ const Header = () => {
 
   return (
     <StyledHeader>
-      {/* 로고 */}
-      <StyledH1>
-        <a href="/">
-          <img src={logo} alt="HP" />
-        </a>
-      </StyledH1>
-      {/* 검색 */}
-      <StyledButton onClick={handleSearchClick}>
-        <img src={search} alt="검색" />
-      </StyledButton>
-      {/* 메뉴 */}
-      <StyledButton style={{ marginLeft: 30 }} onClick={handleMenuClick}>
-        <img src={menu} alt="메뉴" />
-      </StyledButton>
-      {searchBox}
-      <SideNav height={navHeight} />
+      <StyledWrap>
+        {/* 로고 */}
+        <StyledH1>
+          <a href="/">
+            <img src={logo} alt="HP" />
+          </a>
+        </StyledH1>
+        <StyledNav>
+          <li>노트북</li>
+          <li>데스크탑</li>
+          <li>프린트</li>
+          <li>잉크&토너</li>
+          <li>모니터</li>
+          <li>액세서리</li>
+          <li>주요안내</li>
+        </StyledNav>
+        {/* 검색 */}
+        <StyledButton onClick={handleSearchClick}>
+          <img src={search} alt="검색" />
+        </StyledButton>
+        {/* 메뉴 */}
+        <StyledMenu style={{ marginLeft: 30 }} onClick={handleMenuClick}>
+          <img src={menu} alt="메뉴" />
+        </StyledMenu>
+        </StyledWrap>
+        {searchBox}
+        <SideNav height={navHeight} />
     </StyledHeader>
   );
 };

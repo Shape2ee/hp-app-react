@@ -21,6 +21,13 @@ import img5 from "../assets/images/today5.jpg"
 const StyledSection = styled("section")`
   overflow: hidden;
   padding: 80px 24px;
+  
+  @media ${props => props.theme.desktop} {
+    margin: 0 auto;
+    padding: 120px 0;
+    width: 90%;
+    max-width: 1400px;
+  }
 `;
 
 const StyledTextBox = styled("div")`
@@ -31,6 +38,15 @@ const StyledText = styled("p")`
   font-size: 16px;
   line-height: 22px;
   color: #555;
+
+  @media ${props => props.theme.desktop} {
+    font-size: 20px;
+    line-height: 28px;
+
+    .block {
+      display: block;
+    }
+  }
 `;
 
 const StyledSwiper = styled(Swiper)`
@@ -117,7 +133,7 @@ const TodayEvent = () => {
         <Title title={"오늘의 추천"} />
         <StyledText>
           HP는 지금껏 세상이 보지 못한 위대한 기술의 대가들을 모아 디지털
-          라이프를 혁신하고 재창조하기 위해 노력하고 있습니다.
+          <span className="block">라이프를 혁신하고 재창조하기 위해 노력하고 있습니다.</span>
         </StyledText>
         <Button title={"자세히보기"} bg={"black"} text={"white"} />
       </StyledTextBox>
@@ -126,6 +142,14 @@ const TodayEvent = () => {
         spaceBetween={24}
         pagination={{ clickable: true }}
         loop={true}
+        breakpoints={{
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        }}
       >
         {slideData.map( (item, idx) => (
           <SwiperSlide key={idx}>

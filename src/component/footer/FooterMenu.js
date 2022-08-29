@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useState } from "react";
+import styled from "styled-components";
 
-import downArrow from "../../assets/down_arrow.svg"
+import downArrow from "../../assets/down_arrow.svg";
 const StyledMenu = styled("ul")`
   border-top: 1px solid #ccc;
+  text-align: left;
 
-  >li {
+  > li {
     /* display: flex; */
     position: relative;
     justify-content: space-between;
@@ -13,7 +14,7 @@ const StyledMenu = styled("ul")`
     padding: 30px 0;
     /* height: 40px; */
     cursor: pointer;
-    
+
     ::after {
       content: "";
       position: absolute;
@@ -22,7 +23,7 @@ const StyledMenu = styled("ul")`
       display: block;
       width: 20px;
       height: 20px;
-      background: url(${downArrow}) no-repeat 50% / contain;  
+      background: url(${downArrow}) no-repeat 50% / contain;
     }
 
     ul {
@@ -36,7 +37,7 @@ const StyledMenu = styled("ul")`
     }
 
     li:hover {
-    text-decoration: underline;
+      text-decoration: underline;
     }
   }
 
@@ -45,17 +46,45 @@ const StyledMenu = styled("ul")`
   }
 
   li.active ul {
-      display: block;
+    display: block;
+  }
+
+  @media ${(props) => props.theme.desktop} {
+    display: flex;
+    flex-direction: row;
+
+    > li {
+      width: 25%;
+      font-size: 20px;
+
+      ::after {
+        display: none;
+      }
+
+      ul {
+        display: block;
+      }
+
+      li {
+        padding: 10px 0;
+        font-size: 14px;
+      }
+    }
   }
 `;
 
 const FooterTab = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(null);
 
-  const menuList = [ 
+  const menuList = [
     {
       title: (
-        <li key="1" className={activeIndex === 0 ? "active" : ""} onClick={() => handleInfoClick(0)}>회사소개
+        <li
+          key="1"
+          className={activeIndex === 0 ? "active" : ""}
+          onClick={() => handleInfoClick(0)}
+        >
+          회사소개
           <ul>
             <li>회사소개</li>
             <li>HP에 문의</li>
@@ -70,7 +99,12 @@ const FooterTab = () => {
     },
     {
       title: (
-        <li key="2" className={activeIndex === 1 ? "active" : ""} onClick={() => handleInfoClick(1)}>구매방법
+        <li
+          key="2"
+          className={activeIndex === 1 ? "active" : ""}
+          onClick={() => handleInfoClick(1)}
+        >
+          구매방법
           <ul>
             <li>온라인 쇼핑</li>
             <li>HP 담당자에게 전화</li>
@@ -83,7 +117,12 @@ const FooterTab = () => {
     },
     {
       title: (
-        <li key="3" className={activeIndex === 2 ? "active" : ""} onClick={() => handleInfoClick(2)}>서비스
+        <li
+          key="3"
+          className={activeIndex === 2 ? "active" : ""}
+          onClick={() => handleInfoClick(2)}
+        >
+          서비스
           <ul>
             <li>드라이버 다운로드</li>
             <li>지원 및 문제해결</li>
@@ -97,9 +136,14 @@ const FooterTab = () => {
         </li>
       ),
     },
-    {  
+    {
       title: (
-        <li key="4" className={activeIndex === 3 ? "active" : ""} onClick={() => handleInfoClick(3)}>HP파트너
+        <li
+          key="4"
+          className={activeIndex === 3 ? "active" : ""}
+          onClick={() => handleInfoClick(3)}
+        >
+          HP파트너
           <ul>
             <li>HP Amplify 파트너 프로그램</li>
             <li>HP 파트너 포털</li>
@@ -108,24 +152,17 @@ const FooterTab = () => {
         </li>
       ),
     },
-  ]
+  ];
 
   function handleInfoClick(idx) {
-    if(activeIndex === idx) {
-      setActiveIndex(null)
-      return
+    if (activeIndex === idx) {
+      setActiveIndex(null);
+      return;
     }
-    setActiveIndex(idx)
+    setActiveIndex(idx);
   }
 
-  return (
-    <StyledMenu>
-      {menuList.map( item => item.title)}
-     
-      
-     
-    </StyledMenu>
-  );
+  return <StyledMenu>{menuList.map((item) => item.title)}</StyledMenu>;
 };
 
 export default FooterTab;

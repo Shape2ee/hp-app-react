@@ -5,6 +5,13 @@ import SearchForm from "./SearchForm";
 
 const StyledSection = styled("section")`
   padding: 80px 24px;
+
+  @media ${props => props.theme.desktop} {
+    width: 90%;
+    max-width: 1400px;
+    margin: 120px auto;
+    padding: 0;
+  }
 `;
 
 

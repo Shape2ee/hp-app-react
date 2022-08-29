@@ -16,7 +16,7 @@
 
 body {
   margin: 0;
-  background-color: #ccc;
+  /* background-color: #ccc; */
   font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", sans-serif;
@@ -42,13 +42,14 @@ a {
 }
 
 .App {
-  overflow: hidden;
   position: relative;
   /* position:fixed; */
+  /*
   margin: 0 auto;
   width: 100%;
   max-width: 414px;
   background-color: #fff;
+  */
   font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", sans-serif;

@@ -13,7 +13,20 @@ import product5 from "../../assets/images/product5.png"
 const StyledBox = styled("div")`
   margin: 80px 0;
   padding: 0 24px;
+
+  @media ${props => props.theme.desktop} {
+    display: flex;
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 120px 0;
+
+    h2 {
+      white-space: nowrap;
+    }
+  }
 `;
+
 const Product = () => {
   const contentArr = [
     {

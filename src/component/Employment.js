@@ -14,6 +14,20 @@ const StyledSection = styled("section")`
     object-fit: cover;
     vertical-align: top;
   }
+
+  @media ${props => props.theme.desktop} {
+    overflow: hidden;
+    margin: 120px auto;
+    padding: 0;
+    width: 90%;
+    height: 400px;
+    max-width: 1400px;
+    border-radius: 30px;
+
+    img {
+      object-position: 0 70%;
+    }
+  }
 `;
 
 const StyledTextBox = styled("div")`
@@ -35,6 +49,22 @@ const StyledTextBox = styled("div")`
 
     .block {
       display: block;
+    }
+  }
+
+  @media ${props => props.theme.desktop} {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+
+    h2 {
+      font-size: 24px;
+    }
+
+    h3 {
+      font-size: 46px;
+      line-height: 54px;
     }
   }
 `;

@@ -4,6 +4,13 @@ import ProductItem from "./ProductItem";
 
 const StyledListBox = styled("ul")`
   margin-top: 40px;
+
+  @media ${props => props.theme.desktop} {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin-top: 0;
+  }
 `;
 
 const ProductList = ({ data }) => {

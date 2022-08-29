@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import ImgBox from './ImgBox';
 import Button from './Button';
@@ -16,12 +16,20 @@ import digital from "../assets/images/digital.png"
 
 
 const StyledSection = styled("section")`
-overflow: hidden;
+  overflow: hidden;
   margin: 80px 0;
   padding: 0 24px;
   font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", sans-serif;
+
+  @media ${props => props.theme.desktop} {
+    width: 90%;
+    max-width: 1400px;
+    margin: 120px auto;
+    padding: 0;
+  }
+
 `;
 
 const StyledSwiper = styled(Swiper)`
@@ -51,9 +59,42 @@ const StyledTextBox = styled("div")`
     line-height: 22px;
     color: #555;
   }
+
+  @media ${props => props.theme.desktop} {
+    margin-top: 30px;
+    width: 50%;
+
+    h3 {
+      margin-bottom: 20px;
+      font-size: 32px;
+    }
+  }
 `
 
 const Sustainable = () => {
+  const [height, setHeight] = useState("");
+
+  function handleSizeChange() {
+    if(window.innerWidth >= 768 ) {
+      setHeight("400px")
+    } else {
+      setHeight("")
+    }
+  }
+
+  useEffect(
+    function sizeCheck() {
+      window.addEventListener("resize", handleSizeChange);
+      window.addEventListener("load", handleSizeChange);
+      handleSizeChange()
+
+      return () => {
+        window.removeEventListener("resize", handleSizeChange);
+        window.removeEventListener("load", handleSizeChange);
+      }
+    }
+  )
+  
   SwiperCore.use(Pagination);
 
   const slideData = [
@@ -87,12 +128,12 @@ const Sustainable = () => {
         {slideData.map( (item, idx) => (
           <SwiperSlide key={idx}>
               <StyledItem>
-                <ImgBox src={item.imgUrl} alt={"img1"} />
+                <ImgBox src={item.imgUrl} alt={"img1"} height={height}/>
                 <StyledTextBox>
                   <h3>{item.title}</h3>
                   <p>{item.text}</p>
+                  <Button title={"더 알아보기"} bg={"black"} text={"white"}/>
                 </StyledTextBox>
-                <Button title={"더 알아보기"} bg={"black"} text={"white"}/>
               </StyledItem>
           </SwiperSlide>
         ))}

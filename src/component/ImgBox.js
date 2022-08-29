@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const StyledImgBox = styled("div")`
   overflow: hidden;
-  height: 100%;
+  height: ${props => props.height ? props.height : "100%"};
   border-radius: 20px;
 
   img {
@@ -14,9 +14,9 @@ const StyledImgBox = styled("div")`
   }
 `;
 
-const ImgBox = ({ src, alt }) => {
+const ImgBox = ({ height, src, alt }) => {
   return (
-    <StyledImgBox>
+    <StyledImgBox height={height}>
       <img src={src} alt={alt} />
     </StyledImgBox>
   );
