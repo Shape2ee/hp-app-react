@@ -11,6 +11,7 @@ const StyledSearch = styled("div")`
   width: 100%;
   height: 100vh;
   background-color: #fff;
+  z-index: 9999;
 `;
 
 const StyledDiv = styled("div")`

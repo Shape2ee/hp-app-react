@@ -110,9 +110,9 @@ const TabList = () => {
   return (
     <>
       <StyledTabList>
-        {tabArr.map((item, idx) => {
-          return item.tabTitle
-        })}
+        {tabArr.map((item) => (
+          item.tabTitle
+        ))}
       </StyledTabList>
       <div>
         {tabArr[activeIndex].tabContent}

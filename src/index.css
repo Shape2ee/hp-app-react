@@ -10,6 +10,10 @@
     url("./assets/font/PretendardVariable.woff") format("woff-variations");
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   background-color: #ccc;
@@ -38,7 +42,9 @@ a {
 }
 
 .App {
+  overflow: hidden;
   position: relative;
+  /* position:fixed; */
   margin: 0 auto;
   width: 100%;
   max-width: 414px;

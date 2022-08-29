@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-// import SideNav from './SideNav';
+import SideNav from './SideNav';
 import SearchBox from "./SearchBox";
+
 // images
 import logo from "../../assets/HP_log_white.svg";
 import search from "../../assets/search.svg";
 import category from "../../assets/category.svg";
-
+import closeBtn from "../../assets/close.svg"
 
 const StyledHeader = styled("header")`
   display: flex;
@@ -44,24 +45,33 @@ const StyledButton = styled("button")`
 `;
 
 const Header = () => {
-  const [searchBox, setSearchBox] = useState(null)
+  const [searchBox, setSearchBox] = useState(null);
+  const [navHeight, setNavHeight] = useState("0px");
+
+  const [menu, setMenu] = useState(category)
 
   function handleMenuClick(e) {
     e.preventDefault();
-  }
+    if(menu === category) {
+      setMenu(closeBtn)
+      setNavHeight("540px");
+    } else {
+      setMenu(category)
+      setNavHeight("0px");
+    }
+  };
 
   function handleSearchClick(e) {
-    e.preventDefault()
-    console.log(e)
+    e.preventDefault();
     setSearchBox(
       <SearchBox handleCloseClick={handleCloseClick} />
-    )
-  }
+    );
+  };
 
   function handleCloseClick(e) {
-    e.preventDefault()
-    setSearchBox(null)
-  }
+    e.preventDefault();
+    setSearchBox(null);
+  };
 
   return (
     <StyledHeader>
@@ -77,9 +87,10 @@ const Header = () => {
       </StyledButton>
       {/* 메뉴 */}
       <StyledButton style={{ marginLeft: 30 }} onClick={handleMenuClick}>
-        <img src={category} alt="메뉴" />
+        <img src={menu} alt="메뉴" />
       </StyledButton>
       {searchBox}
+      <SideNav height={navHeight} />
     </StyledHeader>
   );
 };

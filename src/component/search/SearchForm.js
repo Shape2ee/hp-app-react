@@ -100,7 +100,6 @@ const SearchForm = () => {
 
   function handleResetClick() {
     setImgData([])
-
   }
 
   return (
