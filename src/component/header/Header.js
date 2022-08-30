@@ -72,14 +72,30 @@ const StyledMenu = styled("button")`
 const StyledNav = styled("ul")`
   display: none;
   margin-right: 20px;
+  height: 100%;
+  line-height: 60px;
   color: #fff;
 
   li {
+    position: relative;
     margin: 0 15px;
+    height: 100%;
     cursor: pointer;
 
-    :hover {
-      text-decoration: underline;
+    ::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: #fff;
+      transform: translateX(-50%);
+      transition: width 0.3s;
+    }
+    :hover::after {
+      width: 100%;
     }
   }
 

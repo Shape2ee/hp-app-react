@@ -69,8 +69,8 @@ const StyledFigure = styled("figure")`
     margin: 20px 0 40px;
     width: 100%;
     text-align: center;
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 20px;
+    line-height: 26px;
     .block {
       display: block;
     }

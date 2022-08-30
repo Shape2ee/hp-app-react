@@ -21,10 +21,9 @@ const StyledDiv = styled("div")`
   position: relative;
   padding: 0 24px;
   height: 70px;
-  border-bottom: 1px solid #ccc;
 
   input {
-    width: 85%;
+    width: calc(100% - 40px);
     height: 50px;
     border-radius: 25px;
     border: none;
@@ -45,6 +44,13 @@ const StyledDiv = styled("div")`
     transform: translateY(-50%);
     opacity: 0.5;
   }
+
+  @media ${props => props.theme.desktop} {
+    width: 90%;
+    height: 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
 `;
 
 const StyledButton = styled("button")`
@@ -64,15 +70,17 @@ const SearchBox = ({handleCloseClick}) => {
   
   return (
     <StyledSearch>
-      <StyledDiv>
-        <StyledButton onClick={handleCloseClick}>
-          <img src={back} alt="close" />
-        </StyledButton>
-        <input type="text" placeholder="검색어를 입력해주세요"/>
-        <StyledButton className='search'>
-          <img src={search} alt="검색" />
-        </StyledButton>
-      </StyledDiv>
+      <div style={{borderBottom:"1px solid #ccc"}}>
+        <StyledDiv>
+          <StyledButton onClick={handleCloseClick}>
+            <img src={back} alt="close" />
+          </StyledButton>
+          <input type="text" placeholder="검색어를 입력해주세요"/>
+          <StyledButton className='search'>
+            <img src={search} alt="검색" />
+          </StyledButton>
+        </StyledDiv>
+      </div>
     </StyledSearch>
   );
 };
