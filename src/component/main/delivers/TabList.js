@@ -3,10 +3,10 @@ import styled from "styled-components";
 import TabItem from "./TabItem";
 
 // images
-import tabImg1 from "../../assets/images/tab_img1.png";
-import tabImg2 from "../../assets/images/tab_img2.png";
-import tabImg3 from "../../assets/images/tab_img3.png";
-import tabImg4 from "../../assets/images/tab_img4.png";
+import tabImg1 from "../../../assets/images/tab_img1.png";
+import tabImg2 from "../../../assets/images/tab_img2.png";
+import tabImg3 from "../../../assets/images/tab_img3.png";
+import tabImg4 from "../../../assets/images/tab_img4.png";
 
 const StyledTabList = styled("ul")`
   display: flex;
@@ -21,6 +21,10 @@ const StyledTabList = styled("ul")`
     padding: 20px 0;
     cursor: pointer;
     color: #999;
+
+    :hover {
+      color: #fff;
+    }
   }
 
   li.active {

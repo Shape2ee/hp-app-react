@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "./Button";
-import ImgBox from "./ImgBox";
-import Title from "./Title";
+import Button from "../Button";
+import ImgBox from "../ImgBox";
+import Title from "../Title";
 
 
 // swiper
@@ -12,11 +12,11 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 // images
-import img1 from "../assets/images/today1.jpg"
-import img2 from "../assets/images/today2.jpg"
-import img3 from "../assets/images/today3.jpg"
-import img4 from "../assets/images/today4.jpg"
-import img5 from "../assets/images/today5.jpg"
+import img1 from "../../assets/images/today1.jpg"
+import img2 from "../../assets/images/today2.jpg"
+import img3 from "../../assets/images/today3.jpg"
+import img4 from "../../assets/images/today4.jpg"
+import img5 from "../../assets/images/today5.jpg"
 
 const StyledSection = styled("section")`
   overflow: hidden;
@@ -74,6 +74,14 @@ const StyledFigure = styled("figure")`
     .block {
       display: block;
     }
+  }
+
+  img {
+    transition: transform 0.5s;
+  }
+
+  :hover img {
+    transform: scale(1.1);
   }
 `;
 

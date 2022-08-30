@@ -1,36 +1,31 @@
 import React from "react";
 import { Reset } from "styled-reset";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import theme from "./component/theme";
 
 // layout
 import Header from "./component/header/Header";
-import BigBanner from "./component/BigBanner";
-import TodayEvent from "./component/TodayEvent";
-import Sustainable from "./component/Sustainable";
-import Delivers from "./component/delivers/Delivers";
-import Product from "./component/product/Product";
-import Employment from "./component/Employment";
-import Search from "./component/search/Search";
 import Footer from "./component/footer/Footer";
+
+// page
+import Main from "./component/main/Main";
+import Sustainability from "./component/sustainability/Sustainability";
 
 function App() {
   return (
     <div className="App">
       <Reset />
-      <ThemeProvider theme={theme}>
-        <Header />
-        <main>
-          <BigBanner />
-          <TodayEvent />
-          <Sustainable />
-          <Delivers />
-          <Product />
-          <Employment />
-          <Search />
-        </main>
-        <Footer />
-      </ThemeProvider>
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/sustainability" element={<Sustainability />} />
+          </Routes>
+          <Footer />
+        </ThemeProvider>
+      </BrowserRouter>
     </div>
   );
 }

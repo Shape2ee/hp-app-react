@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import Title from "../Title";
+import Title from "../../Title";
 import ProductList from "./ProductList";
 
 // images
-import product1 from "../../assets/images/product1.png"
-import product2 from "../../assets/images/product2.png"
-import product3 from "../../assets/images/product3.png"
-import product4 from "../../assets/images/product4.png"
-import product5 from "../../assets/images/product5.png"
+import product1 from "../../../assets/images/product1.png"
+import product2 from "../../../assets/images/product2.png"
+import product3 from "../../../assets/images/product3.png"
+import product4 from "../../../assets/images/product4.png"
+import product5 from "../../../assets/images/product5.png"
 
 const StyledBox = styled("div")`
   margin: 80px 0;

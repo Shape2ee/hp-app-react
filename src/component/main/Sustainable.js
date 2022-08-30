@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import ImgBox from './ImgBox';
-import Button from './Button';
-import Title from './Title';
+import ImgBox from '../ImgBox';
+import Button from '../Button';
+import Title from '../Title';
 // swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination } from "swiper";
@@ -10,9 +10,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 // images
-import climate from "../assets/images/climate.png"
-import human from "../assets/images/human.png"
-import digital from "../assets/images/digital.png"
+import climate from "../../assets/images/climate.png"
+import human from "../../assets/images/human.png"
+import digital from "../../assets/images/digital.png"
 
 
 const StyledSection = styled("section")`

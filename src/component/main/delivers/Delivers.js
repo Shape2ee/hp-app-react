@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
-import Title from '../Title';
+import Title from '../../Title';
 import TabList from './TabList';
 
 const StyledSection = styled("section")`
@@ -50,8 +50,6 @@ const Delivers = () => {
       setFadein({})
     }
   }
-
-
 
   return (
     <StyledSection>

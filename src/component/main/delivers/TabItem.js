@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import ImgBox from "../ImgBox";
-import Button from "../Button";
+import ImgBox from "../../ImgBox";
+import Button from "../../Button";
 
 const StyledBox = styled("div")`
   color: #fff;

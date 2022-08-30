@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { Link } from 'react-router-dom';
+
 import SideNav from './SideNav';
 import SearchBox from "./SearchBox";
 
@@ -114,12 +116,17 @@ const Header = () => {
     e.preventDefault();
     if(menu === category) {
       setMenu(closeBtn)
-      setNavHeight("540px");
+      setNavHeight("420px");
     } else {
       setMenu(category)
       setNavHeight("0px");
     }
   };
+
+  function handleMenuRemove(e) {
+    setMenu(category)
+    setNavHeight("0px");
+  }
 
   function handleSearchClick(e) {
     e.preventDefault();
@@ -138,25 +145,25 @@ const Header = () => {
       <StyledWrap>
         {/* 로고 */}
         <StyledH1>
-          <a href="/">
-            <img src={logo} alt="HP" />
-          </a>
+          <Link to="/">
+              <img src={logo} alt="HP" />
+          </Link>
         </StyledH1>
         <StyledNav>
+          <Link to="/sustainability"><li>지속가능영향</li></Link>
           <li>노트북</li>
           <li>데스크탑</li>
           <li>프린트</li>
           <li>잉크&토너</li>
           <li>모니터</li>
           <li>액세서리</li>
-          <li>주요안내</li>
         </StyledNav>
         {/* 검색 */}
         <StyledButton onClick={handleSearchClick}>
           <img src={search} alt="검색" />
         </StyledButton>
         {/* 메뉴 */}
-        <StyledMenu style={{ marginLeft: 30 }} onClick={handleMenuClick}>
+        <StyledMenu style={{ marginLeft: 30 }} onClick={handleMenuClick} onBlur={handleMenuRemove}>
           <img src={menu} alt="메뉴" />
         </StyledMenu>
         </StyledWrap>

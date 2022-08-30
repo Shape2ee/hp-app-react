@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "./Button";
+import Button from "../Button";
 
-import banner from "../assets/images/middleBanner.png";
+import banner from "../../assets/images/middleBanner.png";
 
 const StyledSection = styled("section")`
   position: relative;

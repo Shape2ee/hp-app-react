@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import axios from "axios";
 import SearchList from "./SearchList";
 // icon
-import search from "../../assets/search_bk.svg";
+import search from "../../../assets/search_bk.svg";
 
 const StyledFrom = styled("form")`
   position: relative;

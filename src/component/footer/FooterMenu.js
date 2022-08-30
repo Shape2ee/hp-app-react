@@ -34,6 +34,7 @@ const StyledMenu = styled("ul")`
     li {
       padding: 20px;
       color: #555;
+      cursor: pointer;
     }
 
     li:hover {
@@ -56,6 +57,7 @@ const StyledMenu = styled("ul")`
     > li {
       width: 25%;
       font-size: 20px;
+      cursor: default;
 
       ::after {
         display: none;

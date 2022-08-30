@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
-import ImgBox from "../ImgBox";
+import ImgBox from "../../ImgBox";
 
 const StyledItem = styled("li")`
   opacity: 0;

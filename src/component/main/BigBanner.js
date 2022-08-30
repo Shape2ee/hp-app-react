@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import Button from "./Button";
+import Button from "../Button";
+
 // swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, EffectFade, Pagination } from "swiper";
@@ -9,12 +10,9 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
 // images
-import banner1 from "../assets/images/banner1.png"
-import banner2 from "../assets/images/banner2.png"
-import banner3 from "../assets/images/banner3.png"
-import pcBanner1 from "../assets/images/banner1_pc.png"
-import pcBanner2 from "../assets/images/banner2_pc.png"
-import pcBanner3 from "../assets/images/banner3_pc.png"
+import banner1 from "../../assets/images/banner_1.png"
+import banner2 from "../../assets/images/banner_2.png"
+import banner3 from "../../assets/images/banner_3.png"
 
 const StyledSwiper = styled(Swiper)`
   width: 100%;
@@ -106,37 +104,6 @@ const BigBanner = () => {
     },
   ];
 
-  const [bgImg, setBgImg] = useState([...slideData]);
-
-  function handleBgChange() {
-    const copyList = [...slideData]
-    const pcImages = [ pcBanner1, pcBanner2, pcBanner3]
-    
-    if(window.innerWidth >= 768) {
-      copyList.forEach( (item, idx) => {
-        item.bg = pcImages[idx]
-      })
-      setBgImg([...copyList])
-    } else {
-      setBgImg([...slideData])
-    }
-  }
-  
-  useEffect( () => {
-    function handleImgUpdate() {
-      window.addEventListener("resize", handleBgChange)
-      window.addEventListener("load", handleBgChange)
-    }
-    handleImgUpdate()
-
-    return () => {
-      window.removeEventListener("resize", handleBgChange)
-      window.removeEventListener("load", handleBgChange)
-    }
-  }
-    
-  )
-
   return (
     <StyledSwiper
       effect={"fade"}
@@ -148,12 +115,12 @@ const BigBanner = () => {
         disableOnInteraction: false,
       }}
     >
-      {slideData.map((item, idx) => (
+      {slideData.map((item) => (
         <SwiperSlide
           className="slideItem"
           key={item.id}
           style={{
-            backgroundImage: `url(${bgImg[idx].bg})`
+            backgroundImage: `url(${item.bg})`
           }}
         >
           <StyledTextBox>
@@ -171,4 +138,3 @@ const BigBanner = () => {
 };
 
 export default BigBanner;
-
