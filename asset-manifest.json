@@ -1,11 +1,13 @@
 {
   "files": {
     "main.css": "/hp-app-react/static/css/main.6264cd2f.css",
-    "main.js": "/hp-app-react/static/js/main.f44c7505.js",
+    "main.js": "/hp-app-react/static/js/main.436918cc.js",
     "static/js/787.861dce37.chunk.js": "/hp-app-react/static/js/787.861dce37.chunk.js",
     "static/media/PretendardVariable.woff2": "/hp-app-react/static/media/PretendardVariable.665f232b25bf70832e04.woff2",
     "static/media/PretendardVariable.woff": "/hp-app-react/static/media/PretendardVariable.b2eddc9681ee9555ef06.woff",
+    "static/media/img1.jpg": "/hp-app-react/static/media/img1.b5925d941f906d162f9a.jpg",
     "static/media/tab_img2.png": "/hp-app-react/static/media/tab_img2.5e04629ac749d108fc66.png",
+    "static/media/visual.png": "/hp-app-react/static/media/visual.804299df29344ad174f7.png",
     "static/media/climate.png": "/hp-app-react/static/media/climate.5042b9d417bea24686bf.png",
     "static/media/human.png": "/hp-app-react/static/media/human.995086cf7ebb821147dc.png",
     "static/media/tab_img4.png": "/hp-app-react/static/media/tab_img4.cc4279e79ed9e7dc3671.png",
@@ -16,6 +18,13 @@
     "static/media/tab_img3.png": "/hp-app-react/static/media/tab_img3.c31cd027e5edc9fdb250.png",
     "static/media/banner_3.png": "/hp-app-react/static/media/banner_3.648162f7db0ebfd8cdce.png",
     "static/media/digital.png": "/hp-app-react/static/media/digital.c2dc8eeeda4de8869413.png",
+    "static/media/card_2.png": "/hp-app-react/static/media/card_2.f85e004898bd827e09de.png",
+    "static/media/card_1.png": "/hp-app-react/static/media/card_1.29121063748f7e829848.png",
+    "static/media/story_4.png": "/hp-app-react/static/media/story_4.734885b8ba1ba340e367.png",
+    "static/media/story_3.png": "/hp-app-react/static/media/story_3.939ecb582a036ad6456c.png",
+    "static/media/story_2.png": "/hp-app-react/static/media/story_2.b9930e8dfdde8297a7e7.png",
+    "static/media/story_1.png": "/hp-app-react/static/media/story_1.2a33204ff8f478f4c83b.png",
+    "static/media/card_3.png": "/hp-app-react/static/media/card_3.5a0969078694bfeae57e.png",
     "static/media/product1.png": "/hp-app-react/static/media/product1.e53b46dc8db801bc449b.png",
     "static/media/today2.jpg": "/hp-app-react/static/media/today2.2638b8502d3b097ca8d9.jpg",
     "static/media/today4.jpg": "/hp-app-react/static/media/today4.0bf063580f45f77c1c2d.jpg",
@@ -39,14 +48,15 @@
     "static/media/search_bk.svg": "/hp-app-react/static/media/search_bk.e6e23d5dfbfa9e871961f9011b2ebdda.svg",
     "static/media/category.svg": "/hp-app-react/static/media/category.9c8505610d377d65ebb61cfb889c1573.svg",
     "static/media/close.svg": "/hp-app-react/static/media/close.9c12a2791d97287692d05e0dcd9af16b.svg",
+    "static/media/top.svg": "/hp-app-react/static/media/top.3c5a8602a9b037cccf6c5560c11917db.svg",
     "static/media/back.svg": "/hp-app-react/static/media/back.c0e5fa54f72e9d4bf640703c437f9f1f.svg",
     "static/media/down_arrow.svg": "/hp-app-react/static/media/down_arrow.2000b09a08240cab760f6a79f5dcba40.svg",
     "main.6264cd2f.css.map": "/hp-app-react/static/css/main.6264cd2f.css.map",
-    "main.f44c7505.js.map": "/hp-app-react/static/js/main.f44c7505.js.map",
+    "main.436918cc.js.map": "/hp-app-react/static/js/main.436918cc.js.map",
     "787.861dce37.chunk.js.map": "/hp-app-react/static/js/787.861dce37.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6264cd2f.css",
-    "static/js/main.f44c7505.js"
+    "static/js/main.436918cc.js"
   ]
 }
