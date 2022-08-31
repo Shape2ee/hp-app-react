@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import ImgBox from '../ImgBox';
 import Button from '../Button';
@@ -9,6 +9,18 @@ const StyledCard = styled("div")`
   margin-bottom: 80px;
   width: 100%;
   height: 100%;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1s;
+
+  :last-child {
+    margin-bottom: 0;
+  }
+
+  &.on {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 
   @media ${props => props.theme.desktop} {
     width: calc(33.333% - 20px);
@@ -33,9 +45,33 @@ const StyledTitle = styled("h3")`
 `
 
 const CardItem = ({title, text, src}) => {
-  
+  const swiper = useRef();
+
+  useEffect(
+    function handleSwiperUpdate() {
+      window.addEventListener("scroll", handleScrollUp);
+      handleScrollUp()
+
+      return () => {
+        window.removeEventListener("scroll", handleScrollUp);
+      }
+    }
+  )
+
+  function handleScrollUp() {
+    const target = swiper.current;
+    const start = target.offsetTop - target.offsetHeight;
+    console.log(start)
+
+    if(window.scrollY >= start) {
+      target.classList.add("on");
+    } else {
+      target.classList.remove("on");
+    }
+  }
+
   return (
-    <StyledCard>
+    <StyledCard ref={swiper}>
       <StyledTextBox>
         <StyledTitle>{title}</StyledTitle>
         <p>{text}</p>

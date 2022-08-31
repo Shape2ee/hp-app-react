@@ -20,6 +20,10 @@ const StyledUl = styled("ul")`
     color: #fff;
     cursor: pointer;
 
+    :not(.link) {
+      color: #ccc
+    }
+
     :hover {
       background-color: #fff;
       color: #000;
@@ -30,12 +34,11 @@ const StyledUl = styled("ul")`
 const SideNav = ({height}) => {
   return (
     <StyledUl height={height}>
-      <Link to="/sustainability"><li>지속가능영향</li></Link>
+      <Link to="/sustainability"><li className='link'>지속가능영향</li></Link>
       <li>노트북</li>
       <li>데스크탑</li>
       <li>프린트</li>
       <li>잉크&토너</li>
-      <li>모니터</li>
       <li>액세서리</li>
     </StyledUl>
   );

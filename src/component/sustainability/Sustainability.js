@@ -7,15 +7,14 @@ import Visual from './Visual';
 import ImpactList from './ImpactList';
 import Card from './Card';
 import Report from './Report';
-import ImpactStory from './ImpactStory';
+import StorySwiper from './StorySwiper';
 
 const StyledSection = styled("section")`
-  overflow: hidden;
   padding: 80px 24px;
   width: 100%;
 
   @media ${props => props.theme.desktop} {
-    padding: 120px 0;
+    padding: 100px 0;
     width: 90%;
     max-width: 1400px;
     margin: 0 auto;
@@ -37,7 +36,10 @@ const Sustainability = () => {
       </StyledSection>
       {/* section3 */}
       <Report />
-      <ImpactStory />
+      <StyledSection>
+        <Title title={"Impact Story"}/>
+        <StorySwiper />
+      </StyledSection>
     </main>
   );
 };

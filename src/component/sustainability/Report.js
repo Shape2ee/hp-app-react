@@ -2,13 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 import Button from '../Button';
 
+import img from '../../assets/images/subPage/img1.jpg'
+
 const StyledSection = styled("section")`
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 80px 0; 
   padding: 100px 24px;
-  background-color: #ddd;
+  background: url(${img}) no-repeat 50% / cover;
+
+  @media ${props => props.theme.desktop} {
+    margin: 100px 0;
+
+    padding: 150px 0;
+  }
 `;
 
 const StyledWrap = styled("div")`
@@ -16,7 +24,7 @@ const StyledWrap = styled("div")`
   width: 90%;
   max-width: 1400px;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.8);
 
   h2 {
     font-size: 32px;

@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import SideNav from './SideNav';
+import SideNav from "./SideNav";
 import SearchBox from "./SearchBox";
 
 // images
 import logo from "../../assets/HP_log_white.svg";
 import search from "../../assets/search.svg";
 import category from "../../assets/category.svg";
-import closeBtn from "../../assets/close.svg"
+import closeBtn from "../../assets/close.svg";
 
 const StyledWrap = styled("div")`
   display: flex;
@@ -19,13 +19,13 @@ const StyledWrap = styled("div")`
   width: 100%;
   height: 60px;
 
-  @media ${props => props.theme.desktop} {
+  @media ${(props) => props.theme.desktop} {
     margin: 0 auto;
     padding: 0;
-    width: 90%;  
+    width: 90%;
     max-width: 1400px;
   }
-`
+`;
 
 const StyledHeader = styled("header")`
   position: fixed;
@@ -66,7 +66,7 @@ const StyledMenu = styled("button")`
     object-fit: contain;
   }
 
-  @media ${props => props.theme.desktop} {
+  @media ${(props) => props.theme.desktop} {
     display: none;
   }
 `;
@@ -84,6 +84,10 @@ const StyledNav = styled("ul")`
     height: 100%;
     cursor: pointer;
 
+    :not(.link) {
+      color: #ccc;
+    }
+
     ::after {
       content: "";
       display: block;
@@ -96,66 +100,66 @@ const StyledNav = styled("ul")`
       transform: translateX(-50%);
       transition: width 0.3s;
     }
+
     :hover::after {
       width: 100%;
     }
   }
 
-  @media ${props => props.theme.desktop} {
+  @media ${(props) => props.theme.desktop} {
     display: flex;
   }
-`
+`;
 
 const Header = () => {
   const [searchBox, setSearchBox] = useState(null);
   const [navHeight, setNavHeight] = useState("0px");
 
-  const [menu, setMenu] = useState(category)
+  const [menu, setMenu] = useState(category);
 
   function handleMenuClick(e) {
     e.preventDefault();
-    if(menu === category) {
-      setMenu(closeBtn)
-      setNavHeight("420px");
+    if (menu === category) {
+      setMenu(closeBtn);
+      setNavHeight("360px");
     } else {
-      setMenu(category)
+      setMenu(category);
       setNavHeight("0px");
     }
-  };
+  }
 
   function handleMenuRemove(e) {
-    setMenu(category)
+    setMenu(category);
     setNavHeight("0px");
   }
 
   function handleSearchClick(e) {
     e.preventDefault();
-    setSearchBox(
-      <SearchBox handleCloseClick={handleCloseClick} />
-    );
-  };
+    setSearchBox(<SearchBox handleCloseClick={handleCloseClick} />);
+  }
 
   function handleCloseClick(e) {
     e.preventDefault();
     setSearchBox(null);
-  };
+  }
 
   return (
     <StyledHeader>
       <StyledWrap>
         {/* 로고 */}
         <StyledH1>
-          <Link to="/">
-              <img src={logo} alt="HP" />
+          <Link to="/hp-app-react">
+            <img src={logo} alt="HP" />
           </Link>
         </StyledH1>
         <StyledNav>
-          <Link to="/sustainability"><li>지속가능영향</li></Link>
+          <Link to="/sustainability">
+            <li className="link">지속가능영향</li>
+          </Link>
           <li>노트북</li>
           <li>데스크탑</li>
           <li>프린트</li>
           <li>잉크&토너</li>
-          <li>모니터</li>
           <li>액세서리</li>
         </StyledNav>
         {/* 검색 */}
@@ -163,12 +167,16 @@ const Header = () => {
           <img src={search} alt="검색" />
         </StyledButton>
         {/* 메뉴 */}
-        <StyledMenu style={{ marginLeft: 30 }} onClick={handleMenuClick} onBlur={handleMenuRemove}>
+        <StyledMenu
+          style={{ marginLeft: 30 }}
+          onClick={handleMenuClick}
+          onBlur={handleMenuRemove}
+        >
           <img src={menu} alt="메뉴" />
         </StyledMenu>
-        </StyledWrap>
-        {searchBox}
-        <SideNav height={navHeight} />
+      </StyledWrap>
+      {searchBox}
+      <SideNav height={navHeight} />
     </StyledHeader>
   );
 };
