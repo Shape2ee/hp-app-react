@@ -61,7 +61,6 @@ const CardItem = ({title, text, src}) => {
   function handleScrollUp() {
     const target = swiper.current;
     const start = target.offsetTop - target.offsetHeight;
-    console.log(start)
 
     if(window.scrollY >= start) {
       target.classList.add("on");

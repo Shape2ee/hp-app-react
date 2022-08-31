@@ -10,8 +10,6 @@ const StyledWrap = styled("div")`
   display: flex;
   flex-direction: column;
   margin-top: 40px;
-  /* opacity: 0; */
-  /* transition: all 1s; */
 
   @media ${props => props.theme.desktop} {
     flex-direction: row;

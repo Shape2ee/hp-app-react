@@ -6,7 +6,6 @@ const StyledBanner = styled("div")`
   position: relative;
   width: 100%;
   height: 700px;
-  /* background-color: #ccc; */
   background: url(${mainImage}) no-repeat 50% / cover;
 `;
 
