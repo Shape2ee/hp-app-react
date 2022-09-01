@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -112,12 +112,13 @@ const StyledNav = styled("ul")`
 
 const Header = () => {
   const [navHeight, setNavHeight] = useState("0px");
-
   const [menu, setMenu] = useState(category);
+  const isIos = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
   function handleMenuClick(e) {
     e.preventDefault();
     if (menu === category) {
+      console.log("snffl");
       setMenu(closeBtn);
       setNavHeight("360px");
     } else {
@@ -126,10 +127,27 @@ const Header = () => {
     }
   }
 
-  function handleMenuRemove(e) {
+  function handleMenuRemove() {
     setMenu(category);
     setNavHeight("0px");
   }
+
+  const menuBtn = useRef();
+
+  useEffect(function handleMenuFocusOut() {
+    const target = menuBtn.current;
+    target.addEventListener(
+      isIos === true ? "mouseout" : "blur",
+      handleMenuRemove
+    );
+
+    return () => {
+      target.removeEventListener(
+        isIos === true ? "mouseout" : "blur",
+        handleMenuRemove
+      );
+    };
+  });
 
   return (
     <StyledHeader>
@@ -158,9 +176,9 @@ const Header = () => {
         </Link>
         {/* 메뉴 */}
         <StyledMenu
+          ref={menuBtn}
           style={{ marginLeft: 30 }}
           onClick={handleMenuClick}
-          onBlur={handleMenuRemove}
         >
           <img src={menu} alt="메뉴" />
         </StyledMenu>

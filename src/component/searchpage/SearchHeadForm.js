@@ -1,7 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 import search from "../../assets/search_bk.svg";
-
 
 const StyledFrom = styled("form")`
   width: calc(100% - 40px);
@@ -14,10 +13,12 @@ const StyledFrom = styled("form")`
     text-indent: 20px;
     background-color: #f2f5f7;
     font-size: 16px;
+    border: 2px dashed transparent;
 
     :focus,
     :active {
-      outline: 2px dashed #ccc;
+      outline: none;
+      border-color: #ccc;
     }
 
     :focus + button,
@@ -43,15 +44,20 @@ const StyledButton = styled("button")`
     object-fit: contain;
   }
 
-  @media ${props => props.theme.desktop} {
+  @media ${(props) => props.theme.desktop} {
     right: 20px;
   }
 `;
 
-const SearchHeadForm = ({handleFormSubmit, value, handleTextChange}) => {
+const SearchHeadForm = ({ handleFormSubmit, value, handleTextChange }) => {
   return (
     <StyledFrom onSubmit={handleFormSubmit}>
-      <input type="text" value={value} placeholder="검색어를 입력해주세요" onChange={handleTextChange} />
+      <input
+        type="text"
+        value={value}
+        placeholder="검색어를 입력해주세요"
+        onChange={handleTextChange}
+      />
       <StyledButton>
         <img src={search} alt="검색" />
       </StyledButton>
