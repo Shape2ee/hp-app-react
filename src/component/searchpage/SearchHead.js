@@ -20,6 +20,7 @@ const StyledWrap = styled("div")`
     max-width: 1400px;
   }
 `
+
 const StyledButton = styled("button")`
   width: 20px;
   height: 20px;
