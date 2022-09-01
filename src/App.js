@@ -12,6 +12,7 @@ import TopButton from "./component/TopButton";
 // page
 import Main from "./component/Main";
 import Sustainability from "./component/sustainability/Sustainability";
+import SearchPage from "./component/searchpage/SearchPage";
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
           <Header />
           <Routes>
             <Route path="/hp-app-react" element={<Main />} />
-            <Route path="/sustainability/" element={<Sustainability />} />
+            <Route path="/sustainability" element={<Sustainability />} />
+            <Route path="/hp-app-react/serch" element={<SearchPage />} />
           </Routes>
           <Footer />
           <TopButton />

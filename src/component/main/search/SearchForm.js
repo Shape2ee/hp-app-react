@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 import axios from "axios";
 import SearchList from "./SearchList";
 // icon
@@ -58,36 +58,33 @@ const StyledReset = styled("button")`
   :hover {
     opacity: 0.8;
   }
-
-`
+`;
 
 const SearchForm = () => {
-  const [ value, setValue ] = useState("")
-  
+  const [value, setValue] = useState("");
+  const [imgData, setImgData] = useState([]);
+
   function handleInputChange(e) {
-    setValue(e.target.value);    
+    setValue(e.target.value);
   }
-  
+
   function handleFormSubmit(e) {
     e.preventDefault();
-    createImgList(value)
-    setValue("")
+    createImgList(value);
+    setValue("");
   }
 
   // img api
-  const [imgData, setImgData] = useState([]);
-
   function createImgList(value) {
-    if(value === "") {
-      return
+    if (value === "") {
+      return;
     }
 
-    console.log(value)
+    console.log(value);
     const API_KEY = "17498131-60c8163ebf480582b8b8ecb47";
-    const request = encodeURIComponent(value.trim())
+    const request = encodeURIComponent(value.trim());
 
-    const url =
-      `https://pixabay.com/api/?key=${API_KEY}&q=${request}&image_type=photo&per_page=6`;
+    const url = `https://pixabay.com/api/?key=${API_KEY}&q=${request}&image_type=photo&per_page=6`;
     axios
       .get(url)
       .then((response) => {
@@ -96,23 +93,30 @@ const SearchForm = () => {
       .catch((error) => {
         setImgData([]);
       });
-  };
+  }
 
   function handleResetClick() {
-    setImgData([])
+    setImgData([]);
   }
 
   return (
     <>
       <StyledFrom onSubmit={handleFormSubmit}>
-        <StyledInput type="text" placeholder="찾으시는 제품을 입력해주세요" onChange={handleInputChange} value={value} />
+        <StyledInput
+          type="text"
+          placeholder="찾으시는 제품을 입력해주세요"
+          onChange={handleInputChange}
+          value={value}
+        />
         <StyledSubmit type="submit">
           <img src={search} alt="검색" />
         </StyledSubmit>
       </StyledFrom>
-      
+
       <SearchList imgData={imgData} />
-      <StyledReset type="reset" onClick={handleResetClick}>초기화</StyledReset>
+      <StyledReset type="reset" onClick={handleResetClick}>
+        초기화
+      </StyledReset>
     </>
   );
 };

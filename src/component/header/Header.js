@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 import SideNav from "./SideNav";
-import SearchBox from "./SearchBox";
 
 // images
 import logo from "../../assets/HP_log_white.svg";
@@ -112,7 +111,6 @@ const StyledNav = styled("ul")`
 `;
 
 const Header = () => {
-  const [searchBox, setSearchBox] = useState(null);
   const [navHeight, setNavHeight] = useState("0px");
 
   const [menu, setMenu] = useState(category);
@@ -131,16 +129,6 @@ const Header = () => {
   function handleMenuRemove(e) {
     setMenu(category);
     setNavHeight("0px");
-  }
-
-  function handleSearchClick(e) {
-    e.preventDefault();
-    setSearchBox(<SearchBox handleCloseClick={handleCloseClick} />);
-  }
-
-  function handleCloseClick(e) {
-    e.preventDefault();
-    setSearchBox(null);
   }
 
   return (
@@ -163,9 +151,11 @@ const Header = () => {
           <li>액세서리</li>
         </StyledNav>
         {/* 검색 */}
-        <StyledButton onClick={handleSearchClick}>
-          <img src={search} alt="검색" />
-        </StyledButton>
+        <Link to="/hp-app-react/serch">
+          <StyledButton>
+            <img src={search} alt="검색" />
+          </StyledButton>
+        </Link>
         {/* 메뉴 */}
         <StyledMenu
           style={{ marginLeft: 30 }}
@@ -175,7 +165,6 @@ const Header = () => {
           <img src={menu} alt="메뉴" />
         </StyledMenu>
       </StyledWrap>
-      {searchBox}
       <SideNav height={navHeight} />
     </StyledHeader>
   );
