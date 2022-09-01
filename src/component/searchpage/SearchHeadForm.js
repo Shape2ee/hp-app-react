@@ -19,14 +19,12 @@ const StyledFrom = styled("form")`
     :active {
       outline: 2px dashed #ccc;
     }
-    
+
     :focus + button,
     :active + button {
       opacity: 1;
     }
   }
-
-
 `;
 
 const StyledButton = styled("button")`
