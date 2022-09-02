@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import back from "../../assets/back.svg";
 import SearchHeadForm from "./SearchHeadForm";
 
@@ -34,13 +34,16 @@ const StyledButton = styled("button")`
 `;
 
 const SearchHead = ({handleFormSubmit, handleTextChange, value}) => {
+  const navigate = useNavigate();
+
+  function handleBackClick() {
+    navigate(-1)
+  }
   return (
     <StyledWrap>
-      <Link to="/hp-app-react">
-        <StyledButton>
-          <img src={back} alt="close" />
-        </StyledButton>
-      </Link>
+      <StyledButton onClick={handleBackClick}>
+        <img src={back} alt="close" />
+      </StyledButton>
       <SearchHeadForm handleFormSubmit={handleFormSubmit} value={value} handleTextChange={handleTextChange}/>
     </StyledWrap>
   );
